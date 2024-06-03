@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .quote-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .quote {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .author {
+            font-size: 20px;
+            color: #555;
+        }
+        .website-link {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-container">
+        <div class="quote" id="quote">Click the button to get a random quote!</div>
+        <div class="author" id="author"></div>
+        <button onclick="generateQuote()">New Quote</button>
+        <div class="website-link">
+            Visit my website: <a href="https://www.yourwebsite.com" target="_blank">Your Website</a>
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+            { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            // Add more quotes as needed
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+            document.getElementById('quote').innerText = quote.text;
+            document.getElementById('author').innerText = quote.author;
+        }
+    </script>
+</body>
+</html>
